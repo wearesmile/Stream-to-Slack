@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Stream to Slack
- * Plugin URI: Coming Soon
+ * Plugin URI: https://github.com/wearesmile/Stream-to-Slack
  * Description: Send Stream logs to Slack.
  * Author: SMILE
  * Version: 0.0.1
