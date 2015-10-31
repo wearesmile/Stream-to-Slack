@@ -69,14 +69,6 @@ class Stream_Slack_API {
 	public function log( $record_id, $record_array ) {
 
 		$record = $record_array;
-		$record['record_id'] = $record_id;
-		if ( defined( 'STREAM_SLACK_DEV' ) ) {
-			$record['development'] = true;
-		}
-
-		if ( ! empty( $record['meta']['user_meta'] ) && is_serialized( $record['meta']['user_meta'] ) ) {
-			$record['meta']['user_meta'] = unserialize( $record['meta']['user_meta'] );
-		}
 
 		$this->send_remote_syslog( $record );
 	}
