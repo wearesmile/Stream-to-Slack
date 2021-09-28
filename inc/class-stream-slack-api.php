@@ -47,7 +47,7 @@ class Stream_Slack_API {
 					'name'        => 'channel',
 					'title'       => esc_html__( 'Channel', 'stream-slack' ),
 					'type'        => 'text',
-					'desc'        => wp_kses_post( 'Event the name of the channel you\'d like to post to. This should include the #' ),
+					'desc'        => wp_kses_post( 'Name of the channel you\'d like to post to. This should include the #' ),
 					'default'     => '',
 				),
 				array(
