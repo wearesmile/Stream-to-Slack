@@ -79,10 +79,11 @@ class Stream_Slack_API {
 	public function send_remote_syslog( $message ) {
 
 		$url = $this->options['slack_destination'];
+		$message_text = apply_filters( 'stream_to_slack_message', $message['summary'], $message, $this );
 		$data = array(
 				'channel'      => $this->options['slack_channel'],
 				'username'     => $this->options['slack_username'],
-				'text'         => '[' . date("g:i a") . '] ' . html_entity_decode( $message['summary'] ),
+				'text'         => '[' . date("g:i a") . '] ' . html_entity_decode( $message_text ),
 				'icon_emoji'   => $this->options['slack_icon_emoji'],
 			);
 			$data_string = json_encode($data);
